@@ -10,8 +10,17 @@ provider:
 
 functions:
     hello:
-        handler: handler.hello
+        handler: src/handler.hello
         events:
             - http:
                   path: /
                   method: get
+                  cors: true
+
+    fetchItems:
+        handler: src/items.fetchItems
+        events:
+            - http:
+                  path: /items
+                  method: get
+                  cors: true
