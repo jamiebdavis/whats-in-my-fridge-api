@@ -1,0 +1,17 @@
+service: WHATS-IN-MY-FRIDGE-api
+
+frameworkVersion: "2"
+
+provider:
+    name: aws
+    region: eu-west-2
+    runtime: nodejs12.x
+    lambdaHashingVersion: "20201221"
+
+functions:
+    hello:
+        handler: handler.hello
+        events:
+            - http:
+                  path: /
+                  method: get
